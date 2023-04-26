@@ -64,5 +64,6 @@ public class Follow
         return "Follow{" + "word='" + word + '\'' + ", count=" + count + '}';
 
     }
+    
 }
 

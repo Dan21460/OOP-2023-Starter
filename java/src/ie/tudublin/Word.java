@@ -61,7 +61,7 @@ public class Word
         
     }
     
-    // Had to make find follow because realised i needed it
+   
     public Follow findFollow(String str) 
     {
 
@@ -74,6 +74,7 @@ public class Word
                 return follow;
 
             }
+
         }
 
         return null;
@@ -85,6 +86,7 @@ public class Word
     {
 
         StringBuilder sb = new StringBuilder();
+        
         sb.append("Word{");
         sb.append("word ='").append(word).append('\'');
         sb.append(", follow=[");

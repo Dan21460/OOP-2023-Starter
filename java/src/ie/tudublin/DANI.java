@@ -1,19 +1,23 @@
 // Dani file where we print sonnets 
 package ie.tudublin;
 
-import java.util.ArrayList;
-import java.util.Random;
+import java.util.ArrayList; // to use arraylists
+import java.util.Random; // to use random function
 
 import processing.core.PApplet;
 
 public class DANI extends PApplet {
 
+    // Using arraylists containing the elements
 	ArrayList<Word> words = new ArrayList<>();
 	Random random = new Random();
 
-	public void settings() {
+	public void settings() 
+	{
+
 		size(1000, 1000);
-		//fullScreen(SPAN);
+		fullScreen(SPAN); // uncommented because everyone loves a big screen :)
+
 	}
 
     String[] sonnet;
@@ -28,7 +32,7 @@ public class DANI extends PApplet {
 
             StringBuilder sb = new StringBuilder();
             int wordCount = 0;
-            int maxWordsInLine = random.nextInt(5) + 4; // Random number between 4 and 8
+            int maxWordsInLine = random.nextInt(5) + 4; // generates random integer
             Word currentWord = words.get(random.nextInt(words.size()));
 
             while (wordCount < maxWordsInLine) 
@@ -64,7 +68,9 @@ public class DANI extends PApplet {
 
     }
 
-	public void setup() {
+	public void setup() 
+	{
+
 		colorMode(HSB);
 
         loadFile("small.txt");
@@ -90,6 +96,7 @@ public class DANI extends PApplet {
                 String nextWord = tokens[i + 1].replaceAll("[^\\w\\s]", "").toLowerCase();
                 
                 Word word = findWord(currentWord);
+
                 if (word == null) 
 				{
 
@@ -99,6 +106,7 @@ public class DANI extends PApplet {
                 }
                 
                 Follow follow = word.findFollow(nextWord);
+
                 if (follow == null) 
 				{
 
@@ -113,8 +121,11 @@ public class DANI extends PApplet {
                     follow.setCount(follow.getCount() + 1);
 
                 }
+
             }
+
         }
+		
     }
 
 	public void printModel() 
@@ -136,6 +147,7 @@ public class DANI extends PApplet {
             System.out.println();
 
         }
+
     }
     
 
