@@ -1,12 +1,14 @@
 package ie.tudublin;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import processing.core.PApplet;
 
 public class DANI extends PApplet {
 
 	ArrayList<Word> words = new ArrayList<>();
+	Random random = new Random();
 
 	public void settings() {
 		size(1000, 1000);
@@ -15,9 +17,50 @@ public class DANI extends PApplet {
 
     String[] sonnet;
 
-    public String[] writeSonnet()
-    {
-        return null;
+    public String[] writeSonnet() 
+	{
+
+        String[] sonnet = new String[14];
+
+        for (int line = 0; line < 14; line++) 
+		{
+
+            StringBuilder sb = new StringBuilder();
+            int wordCount = 0;
+            int maxWordsInLine = random.nextInt(5) + 4; // Random number between 4 and 8
+            Word currentWord = words.get(random.nextInt(words.size()));
+
+            while (wordCount < maxWordsInLine) 
+			{
+
+                sb.append(currentWord.getWord()).append(' ');
+
+                ArrayList<Follow> follows = currentWord.getFollows();
+                if (follows.isEmpty()) 
+				{
+
+                    break;
+
+                }
+
+                currentWord = findWord(follows.get(random.nextInt(follows.size())).getWord());
+                if (currentWord == null) 
+				{
+
+                    currentWord = words.get(random.nextInt(words.size()));
+
+                }
+
+                wordCount++;
+
+            }
+
+            sonnet[line] = sb.toString().trim();
+
+        }
+
+        return sonnet;
+
     }
 
 	public void setup() {
@@ -110,8 +153,9 @@ public class DANI extends PApplet {
         }
 
         return null;
-		
+
     }
+
 
 	public void keyPressed() {
 
@@ -119,13 +163,29 @@ public class DANI extends PApplet {
 
 	float off = 0;
 
+
 	public void draw() 
     {
+
 		background(0);
 		fill(255);
 		noStroke();
 		textSize(20);
         textAlign(CENTER, CENTER);
+
+		if (frameCount == 1) 
+		{
+
+            sonnet = writeSonnet();
+
+        }
+
+        for (int i = 0; i < sonnet.length; i++) 
+		{
+
+            text(sonnet[i], width / 2, height / 14 * (i + 1));
+			
+        }
         
 	}
 }
