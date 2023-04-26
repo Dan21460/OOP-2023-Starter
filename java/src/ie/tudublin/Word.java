@@ -31,6 +31,7 @@ public class Word
         this.follow = new ArrayList<>();
 
     }
+    
 
     public ArrayList<Follow> getFollows()
     {
@@ -57,6 +58,25 @@ public class Word
     {
 
         this.word = word;
+        
+    }
+    
+    // Had to make find follow because realised i needed it
+    public Follow findFollow(String str) 
+    {
+
+        for (Follow follow : follow) 
+        {
+
+            if (follow.getWord().equals(str)) 
+            {
+
+                return follow;
+
+            }
+        }
+
+        return null;
         
     }
 

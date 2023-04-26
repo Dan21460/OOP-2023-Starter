@@ -8,6 +8,7 @@ package ie.tudublin;
 
 public class Follow 
 {
+    
     private String word;
     private int count;
 
