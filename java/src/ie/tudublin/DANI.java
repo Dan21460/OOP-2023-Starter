@@ -1,3 +1,4 @@
+// Dani file where we print sonnets 
 package ie.tudublin;
 
 import java.util.ArrayList;
@@ -122,13 +123,13 @@ public class DANI extends PApplet {
         for (Word word : words) 
 		{
 
-            System.out.println("Word: " + word.getWord());
+            System.out.println( word.getWord() + ":");
             ArrayList<Follow> follows = word.getFollows();
 
             for (Follow follow : follows) 
 			{
 
-                System.out.println("  Follow: " + follow.getWord() + ", Count: " + follow.getCount());
+                System.out.println(follow.getWord() + "(" + follow.getCount() + ")");
 
             }
 
