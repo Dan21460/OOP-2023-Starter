@@ -140,6 +140,7 @@ public class DANI extends PApplet {
 
     public Word findWord(String str) 
 	{
+		
         for (Word word : words)
 		{
 
@@ -157,9 +158,14 @@ public class DANI extends PApplet {
     }
 
 
-	public void keyPressed() {
+	
+    public void keyPressed() 
+	{
 
-	}
+        sonnet = writeSonnet();
+
+    }
+
 
 	float off = 0;
 
@@ -184,8 +190,10 @@ public class DANI extends PApplet {
 		{
 
             text(sonnet[i], width / 2, height / 14 * (i + 1));
-			
+
         }
+
+		
         
 	}
 }
