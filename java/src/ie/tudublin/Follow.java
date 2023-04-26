@@ -6,44 +6,64 @@ and a toString Method that will iterate through the follows ArrayList.
 // making Follow Class according to the specification
 package ie.tudublin;
 
-public class Follow {
+public class Follow 
+{
     private String word;
     private int count;
 
-    public Follow() {
+    public Follow() 
+    {
+
         this.word = "";
         this.count = 0;
+        
     }
 
-    public Follow(String word, int count) {
+    public Follow(String word, int count) 
+    {
+
         this.word = word;
         this.count = count;
+
     }
 
-    public String getWord() {
+    public String getWord() 
+    {
+
         return this.word;
+
     }
 
-    public int getCount() {
+    public int getCount() 
+    {
+
         return this.count;
+
     }
 
 
-    public void setWord(String word) {
+    public void setWord(String word) 
+    {
+
         this.word = word;
+
     }
 
-    public void setCount(int count) {
+    public void setCount(int count) 
+    {
+
         this.count = count;
+
     }
 
-  
+    // Override
+
     @Override
-    public String toString() {
-        return "Follow{" +
-                "word='" + word + '\'' +
-                ", count=" + count +
-                '}';
+    public String toString() 
+    {
+
+        return "Follow{" + "word='" + word + '\'' + ", count=" + count + '}';
+
     }
 }
 
