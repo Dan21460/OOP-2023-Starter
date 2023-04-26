@@ -140,7 +140,7 @@ public class DANI extends PApplet {
 
     public Word findWord(String str) 
 	{
-		
+
         for (Word word : words)
 		{
 
@@ -193,7 +193,6 @@ public class DANI extends PApplet {
 
         }
 
-		
         
 	}
 }

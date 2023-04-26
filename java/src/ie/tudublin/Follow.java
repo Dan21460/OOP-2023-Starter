@@ -8,7 +8,7 @@ package ie.tudublin;
 
 public class Follow 
 {
-    
+
     private String word;
     private int count;
 
@@ -57,9 +57,7 @@ public class Follow
 
     }
 
-    // Override
-
-    @Override
+    
     public String toString() 
     {
 
